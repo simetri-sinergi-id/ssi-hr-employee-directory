@@ -1,7 +1,5 @@
-[![Runbot Status](https://runbot.odoo-community.org/runbot/badge/flat//14.0.svg)](https://runbot.odoo-community.org/runbot/repo/github-com-oca-ssi-hr-employee-directory-)
-[![Build Status](https://travis-ci.com/OCA/ssi-hr-employee-directory.svg?branch=14.0)](https://travis-ci.com/OCA/ssi-hr-employee-directory)
-[![codecov](https://codecov.io/gh/OCA/ssi-hr-employee-directory/branch/14.0/graph/badge.svg)](https://codecov.io/gh/OCA/ssi-hr-employee-directory)
-[![Translation Status](https://translation.odoo-community.org/widgets/ssi-hr-employee-directory-14-0/-/svg-badge.svg)](https://translation.odoo-community.org/engage/ssi-hr-employee-directory-14-0/?utm_source=widget)
+[![Build Status](https://travis-ci.com/simetri-sinergi-id/ssi-hr-employee-directory.svg?branch=14.0)](https://travis-ci.com/simetri-sinergi-id/ssi-hr-employee-directory)
+[![codecov](https://codecov.io/gh/simetri-sinergi-id/ssi-hr-employee-directory/branch/14.0/graph/badge.svg)](https://codecov.io/gh/simetri-sinergi-id/ssi-hr-employee-directory)
 
 <!-- /!\ do not modify above this line -->
 
@@ -25,12 +23,13 @@ This part will be replaced when running the oca-gen-addons-table script from OCA
 
 This repository is licensed under [AGPL-3.0](LICENSE).
 
-However, each module can have a totally different license, as long as they adhere to OCA
-policy. Consult each module's `__manifest__.py` file, which contains a `license` key
+However, each module can have a totally different license. Consult each module's `__manifest__.py` file, which contains a `license` key
 that explains its license.
 
 ----
 
-OCA, or the [Odoo Community Association](http://odoo-community.org/), is a nonprofit
-organization whose mission is to support the collaborative development of Odoo features
-and promote its widespread use.
+.. image:: https://simetri-sinergi.id/logo.png
+   :alt: PT. Simetri Sinergi Indonesia
+   :target: https://simetri-sinergi.id.com
+
+This repo is maintained by the PT. Simetri Sinergi Indonesia.
