@@ -1,5 +1,5 @@
 # Do NOT update manually; changes here will be overwritten by Copier
-_commit: v1.5.0.5
+_commit: v1.5.0.6
 _src_path: gh:simetri-sinergi-id/ssi-addons-repo-template
 dependency_installation_mode: OCA
 generate_requirements_txt: true
