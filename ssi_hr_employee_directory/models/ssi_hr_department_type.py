@@ -9,7 +9,7 @@ class DepartmentType(models.Model):
     _name = "ssi_hr.department_type"
     _description = "Department Type"
     _inherit = ["mail.thread"]
-    _order = "sequence"
+    _order = "sequence, id"
 
     name = fields.Char(
         string="Department Type",
@@ -21,6 +21,8 @@ class DepartmentType(models.Model):
     )
     sequence = fields.Integer(
         string="Sequence",
+        require=True,
+        default=5,
     )
     active = fields.Boolean(
         string="Active",
