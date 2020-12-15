@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 Simetri Sinergi
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <!-- Department Type Data -->
+    <record id="ssi_hr_department_type_demo1" model="ssi_hr.department_type">
+        <field name="name">Board od Director</field>
+        <field name="code">BOD</field>
+        <field name="sequence">1</field>
+    </record>
+    <record id="ssi_hr_department_type_demo2" model="ssi_hr.department_type">
+        <field name="name">Division</field>
+        <field name="code">Div</field>
+        <field name="sequence">2</field>
+    </record>
+    <record id="ssi_hr_department_type_demo3" model="ssi_hr.department_type">
+        <field name="name">Department</field>
+        <field name="code">Dep</field>
+        <field name="sequence">3</field>
+    </record>
+    <record id="ssi_hr_department_type_demo4" model="ssi_hr.department_type">
+        <field name="name">Unit</field>
+        <field name="code">Unit</field>
+        <field name="sequence">4</field>
+    </record>
+    <!-- Department Data -->
+    <record id="ssi_hr_department_demo1" model="ssi_hr.department">
+        <field name="name">Management</field>
+        <field name="department_type_id" ref="ssi_hr_department_type_demo1" />
+    </record>
+    <record id="ssi_hr_department_demo2" model="ssi_hr.department">
+        <field name="name">Finance and Accounting</field>
+        <field name="department_type_id" ref="ssi_hr_department_type_demo2" />
+        <field name="parent_id" ref="ssi_hr_department_demo1" />
+    </record>
+    <record id="ssi_hr_department_demo3" model="ssi_hr.department">
+        <field name="name">Human Resources and GA</field>
+        <field name="department_type_id" ref="ssi_hr_department_type_demo2" />
+        <field name="parent_id" ref="ssi_hr_department_demo1" />
+    </record>
+    <record id="ssi_hr_department_demo4" model="ssi_hr.department">
+        <field name="name">Research and Development</field>
+        <field name="department_type_id" ref="ssi_hr_department_type_demo2" />
+        <field name="parent_id" ref="ssi_hr_department_demo1" />
+    </record>
+    <record id="ssi_hr_department_demo5" model="ssi_hr.department">
+        <field name="name">Human Resources</field>
+        <field name="department_type_id" ref="ssi_hr_department_type_demo3" />
+        <field name="parent_id" ref="ssi_hr_department_demo3" />
+    </record>
+    <!-- Employee Category (Tags) -->
+    <record id="ssi_hr_employee_category_demo1" model="ssi_hr.employee_category">
+        <field name="name">Trainer</field>
+    </record>
+    <record id="ssi_hr_employee_category_demo2" model="ssi_hr.employee_category">
+        <field name="name">Consultant</field>
+    </record>
+    <!-- Job Grade Category -->
+    <record id="ssi_hr_job_grade_category_demo1" model="ssi_hr.job_grade_category">
+        <field name="code">1</field>
+        <field name="name">Level 1</field>
+    </record>
+    <record id="ssi_hr_job_grade_category_demo2" model="ssi_hr.job_grade_category">
+        <field name="code">2</field>
+        <field name="name">Level 2</field>
+    </record>
+    <record id="ssi_hr_job_grade_category_demo3" model="ssi_hr.job_grade_category">
+        <field name="code">3</field>
+        <field name="name">Level 3</field>
+    </record>
+    <record id="ssi_hr_job_grade_category_demo4" model="ssi_hr.job_grade_category">
+        <field name="code">4</field>
+        <field name="name">Level 4</field>
+    </record>
+    <!-- Job Grade -->
+    <record id="ssi_hr_job_grade_demo1A" model="ssi_hr.job_grade">
+        <field name="code">1A</field>
+        <field name="name">Grade 1A</field>
+        <field name="job_grade_category_id" ref="ssi_hr_job_grade_category_demo1" />
+        <field name="sequence">1</field>
+    </record>
+    <record id="ssi_hr_job_grade_demo1B" model="ssi_hr.job_grade">
+        <field name="code">1B</field>
+        <field name="name">Grade 1B</field>
+        <field name="job_grade_category_id" ref="ssi_hr_job_grade_category_demo1" />
+        <field name="sequence">2</field>
+    </record>
+    <record id="ssi_hr_job_grade_demo1C" model="ssi_hr.job_grade">
+        <field name="code">1C</field>
+        <field name="name">Grade 1C</field>
+        <field name="job_grade_category_id" ref="ssi_hr_job_grade_category_demo1" />
+        <field name="sequence">3</field>
+    </record>
+    <record id="ssi_hr_job_grade_demo2A" model="ssi_hr.job_grade">
+        <field name="code">2A</field>
+        <field name="name">Grade 2A</field>
+        <field name="job_grade_category_id" ref="ssi_hr_job_grade_category_demo2" />
+        <field name="sequence">4</field>
+    </record>
+    <record id="ssi_hr_job_grade_demo2B" model="ssi_hr.job_grade">
+        <field name="code">2B</field>
+        <field name="name">Grade 2B</field>
+        <field name="job_grade_category_id" ref="ssi_hr_job_grade_category_demo2" />
+        <field name="sequence">5</field>
+    </record>
+    <record id="ssi_hr_job_grade_demo2C" model="ssi_hr.job_grade">
+        <field name="code">2C</field>
+        <field name="name">Grade 2C</field>
+        <field name="job_grade_category_id" ref="ssi_hr_job_grade_category_demo2" />
+        <field name="sequence">6</field>
+    </record>
+    <record id="ssi_hr_job_grade_demo3A" model="ssi_hr.job_grade">
+        <field name="code">3A</field>
+        <field name="name">Grade 3A</field>
+        <field name="job_grade_category_id" ref="ssi_hr_job_grade_category_demo3" />
+        <field name="sequence">7</field>
+    </record>
+    <record id="ssi_hr_job_grade_demo3B" model="ssi_hr.job_grade">
+        <field name="code">3B</field>
+        <field name="name">Grade 3B</field>
+        <field name="job_grade_category_id" ref="ssi_hr_job_grade_category_demo3" />
+        <field name="sequence">8</field>
+    </record>
+    <record id="ssi_hr_job_grade_demo3C" model="ssi_hr.job_grade">
+        <field name="code">3C</field>
+        <field name="name">Grade 3C</field>
+        <field name="job_grade_category_id" ref="ssi_hr_job_grade_category_demo3" />
+        <field name="sequence">9</field>
+    </record>
+    <record id="ssi_hr_job_grade_demo4A" model="ssi_hr.job_grade">
+        <field name="code">4A</field>
+        <field name="name">Grade 4A</field>
+        <field name="job_grade_category_id" ref="ssi_hr_job_grade_category_demo4" />
+        <field name="sequence">10</field>
+    </record>
+    <record id="ssi_hr_job_grade_demo4B" model="ssi_hr.job_grade">
+        <field name="code">4B</field>
+        <field name="name">Grade 4B</field>
+        <field name="job_grade_category_id" ref="ssi_hr_job_grade_category_demo4" />
+        <field name="sequence">11</field>
+    </record>
+    <record id="ssi_hr_job_grade_demo4C" model="ssi_hr.job_grade">
+        <field name="code">4C</field>
+        <field name="name">Grade 4C</field>
+        <field name="job_grade_category_id" ref="ssi_hr_job_grade_category_demo4" />
+        <field name="sequence">12</field>
+    </record>
+    <!-- Job Family -->
+    <record id="ssi_hr_job_family_demo1" model="ssi_hr.job_family">
+        <field name="code">ADM</field>
+        <field name="name">Administration and Support</field>
+    </record>
+    <record id="ssi_hr_job_family_demo2" model="ssi_hr.job_family">
+        <field name="code">SPV</field>
+        <field name="name">Supervisor</field>
+    </record>
+    <record id="ssi_hr_job_family_demo3" model="ssi_hr.job_family">
+        <field name="code">MGR</field>
+        <field name="name">Manager</field>
+    </record>
+    <record id="ssi_hr_job_family_demo4" model="ssi_hr.job_family">
+        <field name="code">GM</field>
+        <field name="name">General Manager</field>
+    </record>
+    <record id="ssi_hr_job_family_demo5" model="ssi_hr.job_family">
+        <field name="code">BOD</field>
+        <field name="name">BOD</field>
+    </record>
+
+    <!-- Job Grade -->
+    <record id="ssi_hr_job_family_grade_demo11" model="ssi_hr.job_family_grade">
+        <field name="code">ADM01</field>
+        <field name="name">Clerk</field>
+        <field name="min_job_grade_id" ref="ssi_hr_job_grade_demo1A" />
+        <field name="max_job_grade_id" ref="ssi_hr_job_grade_demo1B" />
+        <field name="job_family_id" ref="ssi_hr_job_family_demo1" />
+    </record>
+    <record id="ssi_hr_job_family_grade_demo12" model="ssi_hr.job_family_grade">
+        <field name="code">ADM02</field>
+        <field name="name">Junior Staff</field>
+        <field name="min_job_grade_id" ref="ssi_hr_job_grade_demo1B" />
+        <field name="max_job_grade_id" ref="ssi_hr_job_grade_demo1C" />
+        <field name="job_family_id" ref="ssi_hr_job_family_demo1" />
+    </record>
+    <record id="ssi_hr_job_family_grade_demo13" model="ssi_hr.job_family_grade">
+        <field name="code">ADM03</field>
+        <field name="name">Senior Staff</field>
+        <field name="min_job_grade_id" ref="ssi_hr_job_grade_demo1C" />
+        <field name="max_job_grade_id" ref="ssi_hr_job_grade_demo2A" />
+        <field name="job_family_id" ref="ssi_hr_job_family_demo1" />
+    </record>
+
+</odoo>

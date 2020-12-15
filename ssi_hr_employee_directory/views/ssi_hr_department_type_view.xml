@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 Simetri Sinergi
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+     <record id="ssi_hr_department_type_view_tree" model="ir.ui.view">
+         <field name="name">ssi_hr.department_type Tree</field>
+         <field name="model">ssi_hr.department_type</field>
+         <field name="arch" type="xml">
+             <tree>
+                 <field name="code" />
+                 <field name="name" />
+                 <field name="active" />
+             </tree>
+         </field>
+     </record>
+
+     <record id="ssi_hr_department_type_view_form" model="ir.ui.view">
+         <field name="name">ssi_hr.department_type Form</field>
+         <field name="model">ssi_hr.department_type</field>
+         <field name="arch" type="xml">
+             <form string="Department Type">
+                 <header>
+                 </header>
+                 <sheet>
+                     <div class="oe_button_box" name="button_box" />
+                     <group col="4">
+                         <field name="code" />
+                         <field name="name" />
+                         <field name="sequence" />
+                         <field name="active" widget="boolean_toggle" />
+                     </group>
+                     <notebook colspan="4">
+                         <page name="note" string="Note">
+                             <field
+                                name="note"
+                                colspan="4"
+                                nolabel="1"
+                                placeholder="Add note here ..."
+                            />
+                         </page>
+                         <page name="page_department" string="Department">
+                             <field name="department_ids" />
+                         </page>
+                     </notebook>
+                 </sheet>
+                 <div class="oe_chatter">
+                     <field name="message_follower_ids" groups="base.group_user" />
+                     <field name="message_ids" />
+                 </div>
+             </form>
+         </field>
+     </record>
+
+     <record id="ssi_hr_department_type_action" model="ir.actions.act_window">
+         <field name="name">Department Type</field>
+         <field name="type">ir.actions.act_window</field>
+         <field name="res_model">ssi_hr.department_type</field>
+         <field name="view_mode">tree,form</field>
+         <field name="help" type="html">
+           <p class="oe_view_nocontent_create">
+             Click to add a Department Type.
+           </p>
+         </field>
+     </record>
+ </odoo>

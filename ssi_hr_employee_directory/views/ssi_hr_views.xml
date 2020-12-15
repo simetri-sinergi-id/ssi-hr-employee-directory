@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 Simetri Sinergi
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <data>
+
+        <menuitem id="ssi_menu_hr_root" name="Human Resources" sequence="75" />
+
+        <menuitem
+            id="ssi_menu_hr_main"
+            name="Human Resources"
+            parent="ssi_menu_hr_root"
+            sequence="0"
+        />
+
+        <menuitem
+            id="ssi_menu_hr_humanresources"
+            name="Employee"
+            parent="ssi_menu_hr_root"
+            sequence="1"
+        />
+<!--
+            <menuitem
+                id="menu_hr_employee_user"
+                name="Employees"
+                action="ssi_action_employee"
+                parent="ssi_menu_hr_humanresources"
+                sequence="1"/>
+-->
+        <menuitem
+            id="hr_menu_hr_reports"
+            name="Reporting"
+            parent="ssi_menu_hr_root"
+            sequence="95"
+        />
+
+        <menuitem
+            id="ssi_menu_human_resources_configuration"
+            name="Configuration"
+            parent="ssi_menu_hr_root"
+            sequence="100"
+        />
+            <!-- groups="group_hr_manager" -->
+
+            <menuitem
+            id="ssi_menu_human_resources_configuration_employee"
+            name="Employee"
+            parent="ssi_menu_human_resources_configuration"
+            sequence="1"
+        />
+
+                <menuitem
+            id="ssi_menu_view_employee_category_form"
+            name="Tags"
+            action="ssi_hr_employee_category_action"
+            parent="ssi_menu_human_resources_configuration_employee"
+            sequence="1"
+        />
+
+            <menuitem
+            id="ssi_menu_hr_configuration_organization"
+            name="Structure Organization"
+            parent="ssi_menu_human_resources_configuration"
+            sequence="2"
+        />
+
+                <menuitem
+            id="ssi_menu_view_department_type"
+            name="Department Type"
+            action="ssi_hr_department_type_action"
+            parent="ssi_menu_hr_configuration_organization"
+            sequence="1"
+        />
+
+                <menuitem
+            id="ssi_menu_view_department"
+            name="Department"
+            action="ssi_hr_department_action"
+            parent="ssi_menu_hr_configuration_organization"
+            sequence="2"
+        />
+
+            <menuitem
+            id="ssi_menu_hr_configuration_hr_job_family"
+            name="Job Family Modelling"
+            parent="ssi_menu_human_resources_configuration"
+            sequence="3"
+        />
+
+                <menuitem
+            id="ssi_menu_view_hr_job_grade_category"
+            name="Job Grade Category"
+            action="ssi_hr_job_grade_category_action"
+            parent="ssi_menu_hr_configuration_hr_job_family"
+            sequence="1"
+        />
+
+                <menuitem
+            id="ssi_menu_view_hr_job_grade"
+            name="Job Grade"
+            action="ssi_hr_job_grade_action"
+            parent="ssi_menu_hr_configuration_hr_job_family"
+            sequence="2"
+        />
+
+                <menuitem
+            id="ssi_menu_view_hr_job_family"
+            name="Job Family "
+            action="ssi_hr_job_family_action"
+            parent="ssi_menu_hr_configuration_hr_job_family"
+            sequence="3"
+        />
+
+                <menuitem
+            id="ssi_menu_view_hr_job_family_grade"
+            name="Job Family Grade"
+            action="ssi_hr_job_family_grade_action"
+            parent="ssi_menu_hr_configuration_hr_job_family"
+            sequence="4"
+        />
+
+<!--
+                <menuitem
+                    id="ssi_menu_view_hr_job_family_level"
+                    name="Job Family Level"
+                    action="ssi_action_job_family_level"
+                    parent="ssi_menu_hr_configuration_hr_job_family"
+                    sequence="5"/>
+
+                <menuitem
+                    id="ssi_menu_view_hr_job"
+                    name="Job Position"
+                    action="ssi_action_hr_job"
+                    parent="ssi_menu_hr_configuration_job_family"
+                    sequence="6"/>
+-->
+    </data>
+</odoo>

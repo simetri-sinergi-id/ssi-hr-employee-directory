@@ -1,0 +1,15 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ssi_hr_department_type_all,SSI HR Department Type All,model_ssi_hr_department_type,,1,0,0,0
+access_ssi_hr_department_type_employee,SSI HR Department Type User,model_ssi_hr_department_type,base.group_user,1,1,1,1
+access_ssi_hr_department_all,SSI HR Department All,model_ssi_hr_department,,1,0,0,0
+access_ssi_hr_department_employee,SSI HR Department User,model_ssi_hr_department,base.group_user,1,1,1,1
+access_ssi_hr_employee_category_all,SSI HR Employee Category All,model_ssi_hr_employee_category,,1,0,0,0
+access_ssi_hr_employee_category_employee,SSI HR Employee Category User,model_ssi_hr_employee_category,base.group_user,1,1,1,1
+access_ssi_hr_job_grade_category_all,SSI HR Job Grade Category All,model_ssi_hr_job_grade_category,,0,0,0,0
+access_ssi_hr_job_grade_category_employee,SSI HR Job Grade Category User,model_ssi_hr_job_grade_category,base.group_user,1,1,1,1
+access_ssi_hr_job_grade_all,SSI HR Job Grade All,model_ssi_hr_job_grade,,1,0,0,0
+access_ssi_hr_job_grade_employee,SSI HR Job Grade User,model_ssi_hr_job_grade,base.group_user,1,1,1,1
+access_ssi_hr_job_family_all,SSI HR Job family All,model_ssi_hr_job_family,,1,0,0,0
+access_ssi_hr_job_family_employee,SSI HR Job family User,model_ssi_hr_job_family,base.group_user,1,1,1,1
+access_ssi_hr_job_family_grade_all,SSI HR Job family_grade All,model_ssi_hr_job_family_grade,,1,0,0,0
+access_ssi_hr_job_family_grade_employee,SSI HR Job family_grade User,model_ssi_hr_job_family_grade,base.group_user,1,1,1,1

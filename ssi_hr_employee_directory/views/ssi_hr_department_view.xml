@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 Simetri Sinergi
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+     <record id="ssi_hr_department_view_tree" model="ir.ui.view">
+         <field name="name">ssi_hr.department Tree</field>
+         <field name="model">ssi_hr.department</field>
+         <field name="arch" type="xml">
+             <tree>
+                 <field name="name" />
+                 <field name="department_type_id" />
+                 <field name="active" />
+             </tree>
+         </field>
+     </record>
+
+     <record id="ssi_hr_department_view_form" model="ir.ui.view">
+         <field name="name">ssi_hr.department Form</field>
+         <field name="model">ssi_hr.department</field>
+         <field name="arch" type="xml">
+             <form string="Department">
+                 <header>
+                 </header>
+                 <sheet>
+                     <div class="oe_button_box" name="button_box" />
+                     <widget
+                        name="web_ribbon"
+                        title="Archived"
+                        bg_color="bg-danger"
+                        attrs="{'invisible': [('active', '=', True)]}"
+                    />
+                     <field name="active" invisible="1" />
+                     <group col="4">
+                         <field name="name" />
+                         <field name="department_type_id" />
+                         <field name="parent_id" />
+                         <field
+                            name="company_id"
+                            options="{'no_create': True}"
+                            groups="base.group_multi_company"
+                        />
+                     </group>
+                     <notebook colspan="4">
+                         <page name="note" string="Note">
+                             <field
+                                name="note"
+                                colspan="4"
+                                nolabel="1"
+                                placeholder="Add note here ..."
+                            />
+                         </page>
+                     </notebook>
+                 </sheet>
+                 <div class="oe_chatter">
+                     <field name="message_follower_ids" groups="base.group_user" />
+                     <field name="message_ids" />
+                 </div>
+             </form>
+         </field>
+     </record>
+
+     <record id="ssi_hr_department_action" model="ir.actions.act_window">
+         <field name="name">Departments</field>
+         <field name="res_model">ssi_hr.department</field>
+         <field name="type">ir.actions.act_window</field>
+         <field name="view_mode">tree,form</field>
+         <!-- <field name="search_view_id" ref="view_department_filter"/> -->
+         <field name="help" type="html">
+             <p class="o_view_nocontent_smiling_face">
+                 Create a new department
+             </p><p>
+                 Odoo's department structure is used to manage all documents
+                 related to employees by departments: expenses, timesheets,
+                 leaves, recruitments, etc.
+             </p>
+         </field>
+     </record>
+
+ </odoo>
