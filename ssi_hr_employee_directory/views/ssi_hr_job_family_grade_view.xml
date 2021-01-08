@@ -20,7 +20,7 @@
          <field name="name">ssi_hr.job_family_grade Form</field>
          <field name="model">ssi_hr.job_family_grade</field>
          <field name="arch" type="xml">
-             <form string="Job family">
+             <form string="Job Family Grade">
                  <header>
                  </header>
                  <sheet>
@@ -31,10 +31,12 @@
                         bg_color="bg-danger"
                         attrs="{'invisible': [('active', '=', True)]}"
                     />
-                     <field name="active" invisible="1" />
+                     <div class="oe_title">
+                         <label for="name" class="oe_edit_only" />
+                         <h1><field name="name" /></h1>
+                     </div>
                      <group name="main" col="4">
                          <field name="code" />
-                         <field name="name" />
                          <field name="job_family_id" />
                          <field name="active" widget="boolean_toggle" />
                          <field name="min_job_grade_id" />
@@ -84,4 +86,11 @@
            </p>
          </field>
      </record>
+     <menuitem
+        id="ssi_menu_view_hr_job_family_grade"
+        name="Job Family Grade"
+        action="ssi_hr_job_family_grade_action"
+        parent="ssi_menu_hr_configuration_hr_job_family"
+        sequence="4"
+    />
  </odoo>

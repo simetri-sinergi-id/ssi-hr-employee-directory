@@ -9,6 +9,7 @@ class HrJobGrade(models.Model):
     _name = "ssi_hr.job_grade"
     _description = "Job Grade"
     _inherit = ["mail.thread"]
+    _order = "sequence, id"
 
     name = fields.Char(
         string="Job Grade",
@@ -41,6 +42,18 @@ class HrJobGrade(models.Model):
         string="Company",
         index=True,
         default=lambda self: self.env.company,
+    )
+    employee_ids = fields.One2many(
+        comodel_name="ssi_hr.employee",
+        inverse_name="job_grade_id",
+        string="Employees",
+        readonly=True,
+    )
+    job_ids = fields.Many2many(
+        string="Job Position",
+        comodel_name="ssi_hr.job_position",
+        inverse_name="job_grade_ids",
+        readonly=True,
     )
 
     _sql_constraints = [

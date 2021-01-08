@@ -30,10 +30,12 @@
                         bg_color="bg-danger"
                         attrs="{'invisible': [('active', '=', True)]}"
                     />
-                     <field name="active" invisible="1" />
-                     <group col="4">
+                     <div class="oe_title">
+                         <label for="name" class="oe_edit_only" />
+                         <h1><field name="name" /></h1>
+                     </div>
+                     <group name="main" col="4">
                          <field name="code" />
-                         <field name="name" />
                          <field
                             name="company_id"
                             options="{'no_create': True}"
@@ -77,4 +79,12 @@
            </p>
          </field>
      </record>
+     <menuitem
+        id="ssi_menu_view_hr_job_grade_category"
+        name="Job Grade Category"
+        action="ssi_hr_job_grade_category_action"
+        parent="ssi_menu_hr_configuration_hr_job_family"
+        sequence="1"
+    />
+
  </odoo>

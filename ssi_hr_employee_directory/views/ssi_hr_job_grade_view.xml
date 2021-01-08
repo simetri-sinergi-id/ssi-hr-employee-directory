@@ -8,6 +8,7 @@
          <field name="model">ssi_hr.job_grade</field>
          <field name="arch" type="xml">
              <tree>
+                 <field name="sequence" widget="handle" />
                  <field name="code" />
                  <field name="name" />
                  <field name="active" />
@@ -30,13 +31,15 @@
                         bg_color="bg-danger"
                         attrs="{'invisible': [('active', '=', True)]}"
                     />
-                     <field name="active" invisible="1" />
-                     <group col="4">
+                     <div class="oe_title">
+                         <label for="name" class="oe_edit_only" />
+                         <h1><field name="name" /></h1>
+                     </div>
+                     <group name="main" col="4">
                          <field name="code" />
-                         <field name="name" />
                          <field name="job_grade_category_id" />
-                         <field name="sequence" />
                          <field name="active" widget="boolean_toggle" />
+                         <field name="sequence" />
                          <field
                             name="company_id"
                             options="{'no_create': True}"
@@ -51,6 +54,9 @@
                                 nolabel="1"
                                 placeholder="Add note here ..."
                             />
+                         </page>
+                         <page name="page_employee" string="Employee">
+                             <field name="employee_ids" />
                          </page>
                      </notebook>
                  </sheet>
@@ -73,4 +79,12 @@
            </p>
          </field>
      </record>
+     <menuitem
+        id="ssi_menu_view_hr_job_grade"
+        name="Job Grade"
+        action="ssi_hr_job_grade_action"
+        parent="ssi_menu_hr_configuration_hr_job_family"
+        sequence="2"
+    />
+
  </odoo>

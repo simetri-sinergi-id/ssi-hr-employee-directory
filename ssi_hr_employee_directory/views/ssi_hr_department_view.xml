@@ -30,9 +30,11 @@
                         bg_color="bg-danger"
                         attrs="{'invisible': [('active', '=', True)]}"
                     />
-                     <field name="active" invisible="1" />
-                     <group col="4">
-                         <field name="name" />
+                     <div class="oe_title">
+                         <label for="name" class="oe_edit_only" />
+                         <h1><field name="name" /></h1>
+                     </div>
+                     <group name="main" col="4">
                          <field name="department_type_id" />
                          <field name="parent_id" />
                          <field
@@ -40,6 +42,7 @@
                             options="{'no_create': True}"
                             groups="base.group_multi_company"
                         />
+                        <field name="active" widget="boolean_toggle" />
                      </group>
                      <notebook colspan="4">
                          <page name="note" string="Note">
@@ -49,6 +52,22 @@
                                 nolabel="1"
                                 placeholder="Add note here ..."
                             />
+                         </page>
+                         <page name="manager" string="Manager">
+                             <group name="manager1" col="4">
+                                 <field name="manager_id" />
+                                 <field name="is_pic" widget="boolean_toggle" />
+                                 <field name="real_manager_id" />
+                                 <field name="pic_manager_id" />
+                                 <field name="pic_start_date" />
+                                 <field name="pic_end_date" />
+                             </group>
+                         </page>
+                         <page name="page_employee" string="Employee">
+                             <field name="member_ids" />
+                         </page>
+                         <page name="page_job" string="Job Position">
+                             <field name="jobs_ids" />
                          </page>
                      </notebook>
                  </sheet>
@@ -76,5 +95,13 @@
              </p>
          </field>
      </record>
+
+     <menuitem
+        id="ssi_menu_view_department"
+        name="Department"
+        action="ssi_hr_department_action"
+        parent="ssi_menu_hr_configuration_organization"
+        sequence="2"
+    />
 
  </odoo>

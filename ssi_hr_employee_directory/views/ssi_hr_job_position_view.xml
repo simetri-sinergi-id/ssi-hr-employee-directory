@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 Simetri Sinergi
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+     <record id="ssi_hr_job_position_view_tree" model="ir.ui.view">
+         <field name="name">ssi_hr.job_position Tree</field>
+         <field name="model">ssi_hr.job_position</field>
+         <field name="arch" type="xml">
+             <tree>
+                 <field name="complete_name" />
+                 <field name="department_id" />
+                 <field name="state" />
+                 <field name="no_of_recruitment" />
+                 <field name="no_of_hired_employee" />
+             </tree>
+         </field>
+     </record>
+
+     <record id="ssi_hr_job_position_view_form" model="ir.ui.view">
+         <field name="name">ssi_hr.job_position Form</field>
+         <field name="model">ssi_hr.job_position</field>
+         <field name="arch" type="xml">
+             <form string="Job Position">
+                 <header>
+                     <!-- <button name="set_recruit" string="Start Recruitment" states="open" type="object" class="oe_highlight" groups="base.group_user"/>
+                     <button name="set_open" string="Stop Recruitment" states="recruit" type="object" groups="base.group_user"/> -->
+                     <field
+                        name="state"
+                        widget="statusbar"
+                        statusbar_visible="recruit,open"
+                    />
+                 </header>
+                 <sheet>
+                     <div class="oe_button_box" name="button_box" />
+                     <div class="oe_title">
+                         <label for="name" class="oe_edit_only" />
+                         <h1><field name="name" placeholder="e.g. Sales Manager" /></h1>
+                     </div>
+                     <group name="main" col="4">
+                         <field name="department_id" />
+                         <field name="active" widget="boolean_toggle" />
+                         <field name="job_family_grade_id" />
+                         <field
+                            name="allowed_job_grade_ids"
+                            widget="many2many_tags"
+                            invisible="1"
+                        />
+                         <field
+                            name="job_grade_ids"
+                            widget="many2many_tags"
+                            domain="[('id','in',allowed_job_grade_ids)]"
+                        />
+                     </group>
+                     <notebook>
+                         <page string="Job Description">
+                             <div attrs="{'invisible': [('state', '!=', 'recruit')]}">
+                                 <label for="description" />
+                                 <field name="description" />
+                             </div>
+                         </page>
+                         <page string="Recruitment">
+                             <group>
+                                 <group name="recruitment">
+                                     <field
+                                        name="company_id"
+                                        options="{'no_create': True}"
+                                        groups="base.group_multi_company"
+                                    />
+                                 </group>
+                                 <group name="info_recruitment">
+                                     <field name="no_of_recruitment" />
+                                 </group>
+                             </group>
+                         </page>
+                         <page name="page_employee" string="Employee">
+                             <field name="employee_ids" />
+                         </page>
+                     </notebook>
+                 </sheet>
+                 <div class="oe_chatter">
+                     <field name="message_follower_ids" groups="base.group_user" />
+                     <field name="message_ids" />
+                 </div>
+             </form>
+         </field>
+     </record>
+
+     <record id="ssi_hr_job_position_action" model="ir.actions.act_window">
+         <field name="name">Job Positions</field>
+         <field name="res_model">ssi_hr.job_position</field>
+         <field name="type">ir.actions.act_window</field>
+         <field name="view_mode">tree,form</field>
+         <!-- <field name="search_view_id" ref="view_job_position_filter"/> -->
+         <field name="help" type="html">
+             <p class="o_view_nocontent_smiling_face">
+                 Create a new job_position
+             </p><p>
+                 Odoo's job_position structure is used to manage all documents
+                 related to employees by job_positions: expenses, timesheets,
+                 leaves, recruitments, etc.
+             </p>
+         </field>
+     </record>
+
+     <menuitem
+        id="ssi_menu_view_job_position"
+        name="Job Position"
+        action="ssi_hr_job_position_action"
+        parent="ssi_menu_hr_configuration_hr_job_family"
+        sequence="5"
+    />
+
+ </odoo>

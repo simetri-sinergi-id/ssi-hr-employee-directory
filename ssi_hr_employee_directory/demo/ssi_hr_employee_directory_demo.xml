@@ -190,5 +190,42 @@
         <field name="max_job_grade_id" ref="ssi_hr_job_grade_demo2A" />
         <field name="job_family_id" ref="ssi_hr_job_family_demo1" />
     </record>
+    <!-- Employment Status -->
+    <record id="ssi_hr_employment_status_demo1" model="ssi_hr.employment_status">
+        <field name="name">Permanent</field>
+        <field name="is_employee">True</field>
+        <field name="is_permanent">True</field>
+    </record>
+    <record id="ssi_hr_employment_status_demo2" model="ssi_hr.employment_status">
+        <field name="name">Contract</field>
+        <field name="is_employee">True</field>
+        <field name="is_permanent">False</field>
+    </record>
+    <record id="ssi_hr_employment_status_demo3" model="ssi_hr.employment_status">
+        <field name="name">Internship</field>
+        <field name="is_employee">False</field>
+        <field name="is_permanent">False</field>
+    </record>
+    <record id="ssi_hr_employment_status_demo4" model="ssi_hr.employment_status">
+        <field name="name">Outsourcing</field>
+        <field name="is_employee">False</field>
+        <field name="is_permanent">False</field>
+    </record>
+    <!-- Employee Status -->
+    <record id="ssi_hr_employee_status_demo1" model="ssi_hr.employee_status">
+        <field name="name">Hired</field>
+    </record>
+    <record id="ssi_hr_employee_status_demo2" model="ssi_hr.employee_status">
+        <field name="name">Terminated</field>
+    </record>
+    <record id="ssi_hr_employee_status_demo3" model="ssi_hr.employee_status">
+        <field name="name">End Contract</field>
+    </record>
+    <record id="ssi_hr_employee_status_demo4" model="ssi_hr.employee_status">
+        <field name="name">Pension</field>
+    </record>
+    <record id="ssi_hr_employee_status_demo5" model="ssi_hr.employee_status">
+        <field name="name">Passed Away</field>
+    </record>
 
 </odoo>

@@ -3,9 +3,9 @@
      Copyright 2020 Simetri Sinergi
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 <odoo>
-    <record id="ssi_hr_employee_category_view_tree" model="ir.ui.view">
-        <field name="name">ssi_hr.employee_category Tree</field>
-        <field name="model">ssi_hr.employee_category</field>
+    <record id="ssi_hr_employee_status_view_tree" model="ir.ui.view">
+        <field name="name">ssi_hr.employee_status Tree</field>
+        <field name="model">ssi_hr.employee_status</field>
         <field name="arch" type="xml">
             <tree>
                 <field name="name" />
@@ -13,11 +13,11 @@
         </field>
     </record>
 
-    <record id="ssi_hr_employee_category_view_form" model="ir.ui.view">
-        <field name="name">ssi_hr.employee_category Form</field>
-        <field name="model">ssi_hr.employee_category</field>
+    <record id="ssi_hr_employee_status_view_form" model="ir.ui.view">
+        <field name="name">ssi_hr.employee_status Form</field>
+        <field name="model">ssi_hr.employee_status</field>
         <field name="arch" type="xml">
-            <form string="Employee Category">
+            <form string="employee Status">
                 <header>
                 </header>
                 <sheet>
@@ -27,6 +27,12 @@
                         <h1><field name="name" /></h1>
                     </div>
                     <group name="main" col="4">
+                        <field name="active" widget="boolean_toggle" />
+                        <field
+                            name="company_id"
+                            options="{'no_create': True}"
+                            groups="base.group_multi_company"
+                        />
                     </group>
                 </sheet>
                 <div class="oe_chatter">
@@ -37,23 +43,23 @@
         </field>
     </record>
 
-    <record id="ssi_hr_employee_category_action" model="ir.actions.act_window">
-        <field name="name">Employee Category</field>
+    <record id="ssi_hr_employee_status_action" model="ir.actions.act_window">
+        <field name="name">employee Status</field>
         <field name="type">ir.actions.act_window</field>
-        <field name="res_model">ssi_hr.employee_category</field>
+        <field name="res_model">ssi_hr.employee_status</field>
         <field name="view_mode">tree,form</field>
         <field name="help" type="html">
             <p class="oe_view_nocontent_create">
-                Click to add a Employee Category.
+                Click to add an Employee Status.
             </p>
         </field>
     </record>
     <menuitem
-        id="ssi_menu_view_employee_category_form"
-        name="Tags"
-        action="ssi_hr_employee_category_action"
+        id="ssi_menu_view_employee_status_form"
+        name="Employee Status"
+        action="ssi_hr_employee_status_action"
         parent="ssi_menu_human_resources_configuration_employee"
-        sequence="1"
+        sequence="4"
     />
 
 </odoo>

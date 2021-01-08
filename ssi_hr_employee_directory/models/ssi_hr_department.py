@@ -51,25 +51,50 @@ class Department(models.Model):
         inverse_name="parent_id",
         string="Child Departments",
     )
-    # manager_id = fields.Many2one(
-    #    comodel_name="ssi_hr.employee",
-    #    string="Manager",
-    #    tracking=True,
-    #    domain="['|', ('company_id', '=', False), ('company_id', '=', company_id)]",
-    # )
-    # member_ids = fields.One2many(
-    #    comodel_name="ssi_hr.employee",
-    #    inverse_name="department_id",
-    #    string='Members',
-    #    readonly=True,
-    # )
-    # jobs_ids = fields.One2many(
-    #    comodel_name="ssi_hr.job",
-    #    inverse_name="department_id",
-    #    string="Jobs",
-    # )
-    note = fields.Text("Note")
-    color = fields.Integer("Color Index")
+    manager_id = fields.Many2one(
+        comodel_name="ssi_hr.employee",
+        string="Manager",
+        tracking=True,
+        domain="['|', ('company_id', '=', False), ('company_id', '=', company_id)]",
+    )
+    member_ids = fields.One2many(
+        comodel_name="ssi_hr.employee",
+        inverse_name="department_id",
+        string="Members",
+        readonly=True,
+    )
+    jobs_ids = fields.One2many(
+        comodel_name="ssi_hr.job_position",
+        inverse_name="department_id",
+        string="Jobs",
+        readonly=True,
+    )
+    real_manager_id = fields.Many2one(
+        comodel_name="ssi_hr.employee",
+        string="Real Manager",
+        tracking=True,
+    )
+    pic_manager_id = fields.Many2one(
+        comodel_name="ssi_hr.employee",
+        string="PIC Manager",
+        tracking=True,
+    )
+    is_pic = fields.Boolean(
+        string="PIC",
+        default=False,
+    )
+    pic_start_date = fields.Date(
+        string="Start Date",
+    )
+    pic_end_date = fields.Date(
+        string="End Date",
+    )
+    note = fields.Text(
+        string="Note",
+    )
+    color = fields.Integer(
+        string="Color Index",
+    )
 
     def name_get(self):
         if not self.env.context.get("hierarchical_naming", True):

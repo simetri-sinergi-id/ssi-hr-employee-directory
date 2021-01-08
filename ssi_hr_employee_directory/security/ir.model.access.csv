@@ -13,3 +13,11 @@ access_ssi_hr_job_family_all,SSI HR Job family All,model_ssi_hr_job_family,,1,0,
 access_ssi_hr_job_family_employee,SSI HR Job family User,model_ssi_hr_job_family,base.group_user,1,1,1,1
 access_ssi_hr_job_family_grade_all,SSI HR Job family_grade All,model_ssi_hr_job_family_grade,,1,0,0,0
 access_ssi_hr_job_family_grade_employee,SSI HR Job family_grade User,model_ssi_hr_job_family_grade,base.group_user,1,1,1,1
+access_ssi_hr_employment_status_all,SSI HR Employment Status All,model_ssi_hr_employment_status,,1,0,0,0
+access_ssi_hr_employment_status_employee,SSI HR Employment Status User,model_ssi_hr_employment_status,base.group_user,1,1,1,1
+access_ssi_hr_employee_status_all,SSI HR Employee Status All,model_ssi_hr_employee_status,,1,0,0,0
+access_ssi_hr_employee_status_employee,SSI HR Employee Status User,model_ssi_hr_employee_status,base.group_user,1,1,1,1
+access_ssi_hr_job_position_all,SSI HR Job Position All,model_ssi_hr_job_position,,1,0,0,0
+access_ssi_hr_job_position_employee,SSI HR Job Position User,model_ssi_hr_job_position,base.group_user,1,1,1,1
+access_ssi_hr_employee_all,SSI HR Employee All,model_ssi_hr_employee,,1,0,0,0
+access_ssi_hr_employee_employee,SSI HR Employee User,model_ssi_hr_employee,base.group_user,1,1,1,1

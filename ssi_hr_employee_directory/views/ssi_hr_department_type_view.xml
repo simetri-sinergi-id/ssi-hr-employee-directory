@@ -8,7 +8,7 @@
          <field name="model">ssi_hr.department_type</field>
          <field name="arch" type="xml">
              <tree>
-                  <field name="sequence" widget="handle" />
+                 <field name="sequence" widget="handle" />
                  <field name="code" />
                  <field name="name" />
                  <field name="active" />
@@ -25,11 +25,25 @@
                  </header>
                  <sheet>
                      <div class="oe_button_box" name="button_box" />
-                     <group col="4">
+                     <widget
+                        name="web_ribbon"
+                        title="Archived"
+                        bg_color="bg-danger"
+                        attrs="{'invisible': [('active', '=', True)]}"
+                    />
+                     <div class="oe_title">
+                         <label for="name" class="oe_edit_only" />
+                         <h1><field name="name" /></h1>
+                     </div>
+                     <group name="main" col="4">
                          <field name="code" />
-                         <field name="name" />
                          <field name="sequence" />
                          <field name="active" widget="boolean_toggle" />
+                         <field
+                            name="company_id"
+                            options="{'no_create': True}"
+                            groups="base.group_multi_company"
+                        />
                      </group>
                      <notebook colspan="4">
                          <page name="note" string="Note">
@@ -64,4 +78,13 @@
            </p>
          </field>
      </record>
+
+     <menuitem
+        id="ssi_menu_view_department_type"
+        name="Department Type"
+        action="ssi_hr_department_type_action"
+        parent="ssi_menu_hr_configuration_organization"
+        sequence="1"
+    />
+
  </odoo>

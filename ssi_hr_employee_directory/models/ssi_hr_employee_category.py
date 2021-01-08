@@ -19,7 +19,10 @@ class EmployeeCategory(models.Model):
         string="Tag Name",
         required=True,
     )
-    color = fields.Integer(string="Color Index", default=_get_default_color)
+    color = fields.Integer(
+        string="Color Index",
+        default=_get_default_color,
+    )
 
     # employee_ids = fields.Many2many(
     #    comodel_name='ssi_hr.employee',

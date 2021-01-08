@@ -21,7 +21,7 @@ class DepartmentType(models.Model):
     )
     sequence = fields.Integer(
         string="Sequence",
-        require=True,
+        required=True,
         default=5,
     )
     active = fields.Boolean(
@@ -40,7 +40,9 @@ class DepartmentType(models.Model):
         string="Departments",
         readonly=True,
     )
-    note = fields.Text("Note")
+    note = fields.Text(
+        string="Note",
+    )
 
     _sql_constraints = [
         (
